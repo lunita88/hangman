@@ -1,0 +1,135 @@
+<html>
+<head> <title> VJESALA</title>
+
+     <link rel="stylesheet" href="vesala.css">
+</head>
+<body>
+  <audio src="muzuka.mp3" ></audio>
+     <button class="dugme" id="button" >
+        <i class="fas fa-volume-up"></i> <h4>play </br> stop </br> music</h4>
+     </button>
+    
+
+        <p class="center boja">ime igrača: </p> <b><div class="center imeIgraca" id="ime"></div> </b> 
+        <div id="pocetnaS">
+    <div class="spooky-castle">
+        <div class="circle"></div>
+        <div class="castle-wrap">
+            <div class="ground ground-a"></div>
+            <div class="ground"></div>
+            <div class="castle-hill"></div>
+            <div class="castle">
+                <i class="story floor-a">
+                    <i class="window"><i class="detail"></i></i>
+                    <i class="story floor-b">
+                        <i class="top">
+                            <i class="flag"></i>
+                        </i>
+                        <i class="window"><i class="detail"></i></i>
+                    </i>
+                </i>
+                <i class="story floor-c">
+                    <i class="top">
+                        <i class="flag"></i>
+                    </i>
+                    <i class="window"><i class="detail"></i></i>
+                </i>
+                <i class="story floor-d">
+                    <i class="top">
+                        <i class="flag"></i>
+                    </i>
+                    <i class="window"><i class="detail"></i></i>
+                </i>
+                <i class="window wind"><i class="detail"></i></i>
+                <i class="window main">
+                    <i class="window">
+                        <i class="detail arrow"></i><i class="detail arrow"></i><i class="detail arrow"></i>
+                    </i>
+                </i>
+            </div>
+        </div>
+    </div>
+
+    <br/> 
+        
+           <div class="boja" id="divIme">
+               ime: <input class="inp" type="text" id="nameInput" placeholder="unesi ime"/> 
+               <button class="dugmeIme" id="podesiIme" onclick="podesiImeIgraca();"> Sačuvaj ime</button>
+            </div> 
+           <div class="wrapper center">
+                <button onclick="glavnaStrana();" class="buttonMali"> IGRAJ</button> </br> </br>
+                <button onclick="prikaziPravila();" class="buttonMali ">PRAVILA</button></br> </br>
+            
+            <div class="pravila" id="pravila"> 
+                   <div class="pravilaProzor"> <button class="zatvoriPravilaProzor" onclick="zatvoriPravila();">Zatvori</button> 
+                    <h1>PRAVILA IGRE:</h1>
+                    <p>Pogodite skrivenu riječ,tako što ćete pogađati slova.Svako pogođeno slovo će se prikazati na ekranu,dok na svako promašeno slovo će se postepeno bojiti slika kraljice.Imate 9 pokušaja.
+                    </br> <strong>Srećno!</strong> </p>
+                    </div>  
+                </div>
+    
+            </div>
+        </div> 
+
+<!--glavna stranica-->
+<div id="glavnaS">
+
+        <div class="center">
+           <img id="home" class="slika" name="vjesala" src="slike/kraljica1.jpg" alt="">
+        </div>
+          <div class="center" id="velikiDiv"> </div>
+          <div class="center abcSlova">
+            <button class="sl" id="a" onclick="prikazi('a')">A</button>
+            <button class="sl" id="b" onclick="prikazi('b')">B</button>
+            <button class="sl" id="c" onclick="prikazi('c')">C</button>
+            <button class="sl" id="č" onclick="prikazi('č')">Č</button>
+            <button class="sl" id="ć" onclick="prikazi('ć')">Ć</button>
+            <button class="sl" id="d" onclick="prikazi('d')">D</button>
+            <button class="sl" id="&#454;"onclick="prikazi('\u01C6')">Dž</button>
+            <button class="sl" id="đ" onclick="prikazi('đ')">Đ</button>
+            <button class="sl" id="e" onclick="prikazi('e')">E</button>
+            <button class="sl" id="f" onclick="prikazi('f')">F</button>
+            <button class="sl" id="g" onclick="prikazi('g')">G</button>
+            <button class="sl" id="h" onclick="prikazi('h')">H</button>
+            <button class="sl" id="i" onclick="prikazi('i')">I</button>
+            <button class="sl" id="j" onclick="prikazi('j')">J</button>
+            <button class="sl" id="k" onclick="prikazi('k')">K</button>
+            <button class="sl" id="l" onclick="prikazi('l')">L</button>
+            <button class="sl" id="&#457;" onclick="prikazi('\u01C9')">Lj</button>
+            <button class="sl" id="m" onclick="prikazi('m')">M</button>
+            <button class="sl" id="n" onclick="prikazi('n')">N</button>
+            <button class="sl" id="&#460;" onclick="prikazi('\u01CC')">Nj</button>
+            <button class="sl" id="o" onclick="prikazi('o')">O</button>
+            <button class="sl" id="p" onclick="prikazi('p')">P</button>
+            <button class="sl" id="r" onclick="prikazi('r')">R</button>
+            <button class="sl" id="s" onclick="prikazi('s')">S</button>
+            <button class="sl" id="š" onclick="prikazi('š')">Š</button>
+            <button class="sl" id="t" onclick="prikazi('t')">T</button>
+            <button class="sl" id="u" onclick="prikazi('u')">U</button>
+            <button class="sl" id="v" onclick="prikazi('v')">V</button>
+            <button class="sl" id="z" onclick="prikazi('z')">Z</button>
+            <button class="sl" id="ž" onclick="prikazi('ž')">Ž</button>
+    </div>
+  <div  class="kontrolnaTabla center"> 
+    <button class="buttonMali" id="napustiIgru" onclick="napustiIgru();" >izađi iz igre</button> 
+  </div>
+<script src="vesala.js" > </script>
+
+  <div class="popUp" id="win">
+     <div class="popUpText boja">
+        <h1>Bravo,pobedio si!</h1>
+         <button id="resetuj" class="buttonMali" onclick="playGame();" >igraj ponovo</button> </br> </br> </br>
+         <button id="resetuj" class="buttonMali" onclick="zatvoriWin(location.reload());">završi igru</button>
+     </div>
+  </div>
+
+  <div class="popUp" id="lose">
+    <div class="popUpText boja">
+        <h1>Izgbio si!</h1>
+        <button id="resetuj" class="buttonMali" onclick="playGame();" >igraj ponovo</button> </br> </br> </br> 
+        <button id="resetuj" class="buttonMali" onclick="zatvoriLose(location.reload());">  završi igru </button>
+    </div> 
+  </div>
+</div>
+</body>
+</html>
